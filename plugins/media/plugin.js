@@ -659,7 +659,7 @@
     if (videoTemplateCallback) {
       return videoTemplateCallback(data);
     } else {
-      return '<video width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="controls">\n' + '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' + (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</video>';
+      return '<video width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="1" playsinline >\n' + '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' + (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</video>';
     }
   };
   var getScriptHtml = function (data) {
@@ -703,8 +703,8 @@
       }
       var audioTemplateCallback = Settings.getAudioTemplateCallback(editor);
       var videoTemplateCallback = Settings.getVideoTemplateCallback(editor);
-      data.width = data.width || '300';
-      data.height = data.height || '150';
+      data.width = data.width || '100%';
+      data.height = data.height || 'auto';
       global$1.each(data, function (value, key) {
         data[key] = editor.dom.encode('' + value);
       });
@@ -1144,7 +1144,7 @@
       console.log(src)
       previewNode.attr({
         src: src,
-        //controls: '', //鏄剧ず鎾斁宸ュ叿灏卞彇娑堣繖琛岀殑娉ㄩ噴
+        controls: '', //鏄剧ず鎾斁宸ュ叿灏卞彇娑堣繖琛岀殑娉ㄩ噴
         allowfullscreen: node.attr('allowfullscreen'),
         style: node.attr('style'),
         class: node.attr('class'),
