@@ -717,7 +717,7 @@
       } else if (data.type === 'script') {
         return getScriptHtml(data);
       } else {
-        data.poster = data.source + '?vframe/jpg/offset/1/w/600/h/400'
+        data.poster = data.source + '?vframe/jpg/offset/1/w/800/h/533'
         return getVideoHtml(data, videoTemplateCallback);
       }
     }
