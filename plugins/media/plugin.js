@@ -659,7 +659,7 @@
     if (videoTemplateCallback) {
       return videoTemplateCallback(data);
     } else {
-      return '<video width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="controls" playsinline >\n' + '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' + (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</video>';
+      return '<video style="object-fit:fill" width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="controls" playsinline >\n' + '<source src="' + data.source + '"' + (data.sourcemime ? ' type="' + data.sourcemime + '"' : '') + ' />\n' + (data.altsource ? '<source src="' + data.altsource + '"' + (data.altsourcemime ? ' type="' + data.altsourcemime + '"' : '') + ' />\n' : '') + '</video>';
     }
   };
   var getScriptHtml = function (data) {
@@ -717,7 +717,7 @@
       } else if (data.type === 'script') {
         return getScriptHtml(data);
       } else {
-        data.poster = data.source + '?vframe/jpg/offset/1/w/800/h/533'
+        data.poster = data.source + '?vframe/jpg/offset/1/w/800'
         return getVideoHtml(data, videoTemplateCallback);
       }
     }
