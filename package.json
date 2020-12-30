@@ -19,5 +19,6 @@
 	],
 	"bugs": {
 		"url": "https://github.com/tinymce/tinymce/issues"
-	}
+	},
+	"dependencies": {}
 }
