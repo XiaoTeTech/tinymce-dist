@@ -1,7 +1,7 @@
 tinymce.PluginManager.add('example', function (editor, url) {
   var openDialog = function () {
     return editor.windowManager.open({
-      title: '投票',
+      title: '图片链接',
       body: {
         type: 'panel',
         items: [
